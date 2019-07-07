@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d" FontSize="18" 
+        mc:Ignorable="d" FontSize="19" 
         Title="TestoMaker2k19" Height="600"  Width="800" FontFamily="Segoe UI Light" Background="#FF2B2B2B" Icon="Images/roli2.png" ResizeMode="CanResizeWithGrip"  WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" 
         KeyDown="WcisnietoKlawisz">
 
