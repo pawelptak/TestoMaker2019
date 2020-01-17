@@ -9,4 +9,5 @@ ESC - usunięcie wariantu odpowiedzi
 
 CTRL + P - zaznaczenie odpwowiedzi jako prawdziwą
 
-![testo](https://user-images.githubusercontent.com/52631916/72626755-87174100-394b-11ea-8d89-526eb8fb34a4.PNG)
+![tst](https://user-images.githubusercontent.com/52631916/72626877-c6459200-394b-11ea-9442-13bee3501ef2.png)
+
