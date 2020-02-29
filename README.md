@@ -10,4 +10,4 @@ ESC - usunięcie wariantu odpowiedzi
 CTRL + P - zaznaczenie odpwowiedzi jako prawdziwą
 
 
-
+https://user-images.githubusercontent.com/52631916/75611621-63cfdc00-5b1c-11ea-923c-7bcc4d9273fe.png
