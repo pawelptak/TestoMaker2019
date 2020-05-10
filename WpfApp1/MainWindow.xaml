@@ -9,24 +9,22 @@
         KeyDown="WcisnietoKlawisz">
 
 
- 
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
             <!--  <ColumnDefinition Width="auto" />-->
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="1*" />
             <!--zajmie pozostale miesce-->
-            <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="100" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="120" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
@@ -34,10 +32,10 @@
         </Grid.RowDefinitions>
 
 
-        <DockPanel VerticalAlignment="Center"  Grid.Row="0" Grid.ColumnSpan="8" Background="Transparent" MouseDown="Przenoszenie">
+        <DockPanel VerticalAlignment="Center"  Grid.Row="0" Grid.ColumnSpan="7" Background="Transparent" MouseDown="Przenoszenie" Margin="10">
 
-            <DockPanel x:Name="TitleBar" DockPanel.Dock="Top" Margin="5,0" >
-                <Image Source="Images/roli2.png" Height="24" Width="24" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="ENTER - dodaj nowy wariant &#x0a;ESC - usuń wariant &#x0a;CTRL+P - zaznacz jako prawda"/>
+            <DockPanel x:Name="TitleBar" DockPanel.Dock="Top">
+                <Image Source="Images/roli2.png"  Margin="0,0,5,0"  HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="ENTER - dodaj nowy wariant &#x0a;ESC - usuń wariant &#x0a;CTRL+P - zaznacz jako prawda"/>
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="DimGray" Margin="0" ToolTip="Autor"  FontWeight="DemiBold">Paweł Ptak
                 </TextBlock>
 
@@ -45,7 +43,7 @@
 
                     <Button.Template>
                         <ControlTemplate>
-                            <Image Source="Images/exit.png" Height="24"  Width="24" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="False"/>
+                            <Image Source="Images/exit.png" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="False"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -54,7 +52,7 @@
 
                     <Button.Template>
                         <ControlTemplate>
-                            <Image Source="Images/screen.png" Height="24" Margin="0,0,5,0" Width="24" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <Image Source="Images/screen.png" Height="20" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -63,7 +61,7 @@
 
                     <Button.Template>
                         <ControlTemplate>
-                            <Image Source="Images/minimize.png" Height="24" Margin="0,0,5,0" Width="24" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <Image Source="Images/minimize.png" Height="20" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -72,28 +70,27 @@
 
         </DockPanel>
 
-        <TextBlock Grid.Column="3" Grid.Row="1" FontSize="40" Text="TESTO MAKER 2019"
+        <TextBlock Grid.Column="2" Grid.Row="1" FontSize="40" Text="TESTO MAKER 2019"
                   Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Humnst777 BlkCn BT" Foreground="White"/>
 
 
-        <TextBlock x:Name="TekstNrPytania" FontSize="25" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB2B2B2" Text="Pytanie nr" Margin="0,0,80,0"/>
-        <TextBox  x:Name="NrPytania" FontSize="25" Grid.Column="3" Grid.Row="2" Width="40" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB2B2B2" Text="1" Margin="80,0,0,0" Background="#FF1D1D1D" BorderBrush="{x:Null}"/>
+        <TextBlock x:Name="TekstNrPytania" FontSize="25" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB2B2B2" Text="Pytanie nr" Margin="0,0,80,0"/>
+        <TextBox  x:Name="NrPytania" FontSize="25" Grid.Column="2" Grid.Row="2" Width="40" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB2B2B2" Text="1" Margin="80,0,0,0" Background="#FF1D1D1D" BorderBrush="{x:Null}"/>
 
 
-        <TextBox x:Name="Wprowadzanie" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Wprowadź pytanie" VerticalAlignment="Center" Width="600" Height="100" Margin="10" LostFocus="No_Focus"  GotFocus="TextBox_Focus" Background="#FF191919"  Foreground="White" SelectionBrush="#FF838383" BorderBrush="{x:Null}" 
+        <TextBox x:Name="Wprowadzanie" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" TextWrapping="Wrap" Text="Wprowadź pytanie"  Margin="10" LostFocus="No_Focus"  GotFocus="TextBox_Focus" Background="#FF191919"  Foreground="White" SelectionBrush="#FF838383" BorderBrush="{x:Null}" 
          AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
 
 
-        <Grid Grid.Column="3" Grid.Row="5">
+        <Grid Grid.Column="2" Grid.Row="5" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="241*" />
-                <ColumnDefinition Width="72*"/>
-                <ColumnDefinition Width="84*" />
+                <ColumnDefinition Width=".7*" />
+                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-            <StackPanel Name="Odpowiedzi" Uid="0" Grid.Column="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,0,1">
+            <StackPanel Name="Odpowiedzi" Uid="0" Grid.Column="0"  Margin="0,0,0,1">
                 <TextBox x:Name="OdpowiedzA"  Text="Odpowiedź A" Style="{DynamicResource Odpowiedz}" BorderBrush="{x:Null}" KeyDown="ZaznaczPrawde" />
             </StackPanel>
-            <StackPanel Name="PrawdaFalsz" Uid="0" Grid.Column="2" VerticalAlignment="Center" >
+            <StackPanel Name="PrawdaFalsz" Uid="0" Grid.Column="1"  >
                 <CheckBox x:Name="PrawdaFalszA"  Style="{DynamicResource PrawdaFalsz}"/>
             </StackPanel>
         </Grid>
@@ -101,22 +98,25 @@
 
 
 
-        <Button x:Name="Dodaj"  Grid.Column="3" Grid.Row="4" HorizontalAlignment="Right" Width="30" Height="30" Content="+" FontSize="23"
+        <Button x:Name="Dodaj"  Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" Width="30" Height="30"  
                Margin="0,0,120,0" Click="btnAddMore_Click"  Foreground="#FFAAAAAA" Background="#FF4B4B4B" 
-                ToolTip="Dodaj wariant" VerticalAlignment="Center"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Padding="0"/>
-
-        <Button x:Name="Usun" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Right" Height="30" Width="30"  Content="-" FontSize="28"
-               Margin="40,0,80,0" Click="btnRemove_Click"  Foreground="#FFAAAAAA" Background="#FF4B4B4B" 
-               ToolTip="Usuń wariant" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Padding="0">
+                ToolTip="Dodaj wariant" VerticalAlignment="Center"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Padding="0">
+            <TextBlock Text="+" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
         </Button>
 
-        <Button Name="Zapis" Grid.Column="3" Grid.Row="4"  Height="30" Width="30" Background="#FF4B4B4B" HorizontalAlignment="Right" BorderBrush="{x:Null}" Click="ZapiszOdp" ToolTip="Dodaj pytanie do bazy">
+            <Button x:Name="Usun" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" Height="30" Width="30" 
+               Margin="40,0,80,0" Click="btnRemove_Click"  Foreground="#FFAAAAAA" Background="#FF4B4B4B" 
+               ToolTip="Usuń wariant" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Padding="0">
+            <TextBlock Text="-" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"  Height="30" Width="30"/>
+        </Button>
+
+        <Button Name="Zapis" Grid.Column="2" Grid.Row="4"  Height="30" Width="30" Background="#FF4B4B4B" HorizontalAlignment="Right" BorderBrush="{x:Null}" Click="ZapiszOdp" ToolTip="Dodaj pytanie do bazy">
             <StackPanel>
                 <Image Source="Images/zapisz.png" Stretch="Fill" Margin="2" />
             </StackPanel>
         </Button>
 
-        <Button Name="ObrazButon" Grid.Column="3" Grid.Row="4" Margin="40,0,40,0"  Height="30" Width="30" Background="#FF4B4B4B" HorizontalAlignment="Right" BorderBrush="{x:Null}"  ToolTip="Wczytaj obraz" Click="DodajObraz">
+        <Button Name="ObrazButon" Grid.Column="2" Grid.Row="4" Margin="40,0,40,0"  Height="30" Width="30" Background="#FF4B4B4B" HorizontalAlignment="Right" BorderBrush="{x:Null}"  ToolTip="Wczytaj obraz" Click="DodajObraz">
             <StackPanel>
                 <Image Source="Images/obraz.png" Stretch="Fill" Margin="2" />
             </StackPanel>

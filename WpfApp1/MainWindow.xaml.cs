@@ -3,9 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using WpfApp1.Properties;
 
 namespace WpfApp1
 {
@@ -20,8 +23,8 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            NrPytania.Text = nrPytania.ToString(); 
-           
+            NrPytania.Text = Settings.Default["nrPytania"].ToString();
+
         }
 
         
@@ -118,9 +121,16 @@ namespace WpfApp1
                 {
                     sw.WriteLine(odp);
                 }      
-            }
+            }          
             nrPytania++;
+            ZapiszNrPytania(nrPytania);
             NrPytania.Text = nrPytania.ToString();      
+        }
+
+        private void ZapiszNrPytania(int nr)
+        {
+            Settings.Default["nrPytania"] = nr;
+            Settings.Default.Save();
         }
 
         private string txt;   
@@ -139,6 +149,9 @@ namespace WpfApp1
                 if (box.Text == "")
             {
                 box.Text = txt;           
+            }   else
+            {
+                box.Text = box.Text.Replace("\n", "").Replace("\r", ""); //usuwa znaki nowej linii z tekstu
             }
                         
         }
@@ -151,21 +164,20 @@ namespace WpfApp1
 
         private void Minimalizuj(object sender, RoutedEventArgs e)
         {
-            WindowState = WindowState.Minimized;
+            if (WindowState != WindowState.Minimized) WindowState = WindowState.Minimized;
+
         }
 
-        bool maximized = false;
+ 
         private void Maksymalizuj(object sender, RoutedEventArgs e) //umozliwia maksymalizacje okna
         {
-            if (maximized == false)
+            if (WindowState != WindowState.Maximized) 
             {
                 WindowState = WindowState.Maximized;
-                maximized = true;
             }
             else
             {
                 WindowState = WindowState.Normal;
-                maximized = false;
             }
            
         }
